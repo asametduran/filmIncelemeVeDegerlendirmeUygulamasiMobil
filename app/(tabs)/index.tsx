@@ -9,6 +9,16 @@ import {fetchMovies} from "@/services/api";
 import MovieCard from "@/components/MovieCard";
 import {getTrendingMovies} from "@/services/appwrite";
 import TrendingCard from "@/components/TrendingCard";
+import {Account, Client} from "react-native-appwrite";
+
+let client: Client;
+let account: Account;
+
+client = new Client();
+client
+    .setEndpoint('https://fra.cloud.appwrite.io/v1')
+    .setProject('6849cd660005d2bcb2aa')
+    .setPlatform('com.movieapp')
 
 export default function Index() {
     const router = useRouter();
